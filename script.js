@@ -6,6 +6,14 @@
 
 //function operate() will take an operator and 2 numbers and then calls one of the above functions on the numbers
 
+let formerNum;
+let operator;
+let latterNum;
+
+function operate() {
+
+}
+
 function add(a, b) {
     return a + b;
 }
