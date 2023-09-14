@@ -1,11 +1,34 @@
+/* Palette:
+#f991cc
+#e2afde
+#f79d5c
+#f3752b
+#140318 */
+
+
 body {
     margin: 0;
 }
 
+.num {
+    color: #1d1e2c;
+    background-color: #f7ebec;
+}
+
+.operator {
+    background-color: #ac9fbb;
+}
+
+.toprow {
+    background-color: #ddbdd5;
+}
+
 .container {
-    background-color: lightcoral;
+    border-radius: 15px;
+    outline: 5px solid #1d1e2c;
+    background-color: #59656f;
     width: 400px;
-    height: 600px;
+    height: 605px;
     margin: 100px auto;
     box-sizing: border-box;
     display: flex;
@@ -14,7 +37,8 @@ body {
 }
 
 .display {
-    background-color: rgb(255, 237, 230);
+    color: #f7ebec;
+    background-color: #331a2d;
     border-radius: 10px;
     height: 100px;
     margin: 3px 13px;

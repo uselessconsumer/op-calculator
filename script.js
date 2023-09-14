@@ -10,8 +10,8 @@ let formerNum;
 let operator;
 let latterNum;
 
-function operate() {
-
+function operate(callback, a, b) {
+    
 }
 
 function add(a, b) {
