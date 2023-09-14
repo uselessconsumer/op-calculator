@@ -8,6 +8,9 @@
 
 body {
     margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-blend-mode: lighten;
+    background-image: url("images/tumblr_inline_mlkwolhobQ1r53miq.png");
 }
 
 .num {
@@ -17,6 +20,8 @@ body {
 
 .operator {
     background-color: #ac9fbb;
+    color: #f7ebec;
+    font-size: 26px;
 }
 
 .toprow {
@@ -39,6 +44,8 @@ body {
 .display {
     color: #f7ebec;
     background-color: #331a2d;
+    padding-right: 5px;
+    font-size: 70px;
     border-radius: 10px;
     height: 100px;
     margin: 3px 13px;
@@ -63,5 +70,12 @@ button {
     width: 90px;
     height: 90px;
     border-radius: 10px;
+    font-size: 25px;
+    border: 0px;
+    opacity: .9;
 }
+
+button:hover {opacity: 1;}
+
+button:active {opacity: .8;}
 
