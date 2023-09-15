@@ -18,7 +18,7 @@ body {
     background-color: #f7ebec;
 }
 
-.operator {
+.rightcol {
     background-color: #ac9fbb;
     color: #f7ebec;
     font-size: 26px;
@@ -28,12 +28,16 @@ body {
     background-color: #ddbdd5;
 }
 
+#decimal {
+    font-size: 40px;
+}
+
 .container {
     border-radius: 15px;
     outline: 5px solid #1d1e2c;
     background-color: #59656f;
     width: 400px;
-    height: 605px;
+    height: 610px;
     margin: 100px auto;
     box-sizing: border-box;
     display: flex;
@@ -77,4 +81,3 @@ button {
 button:hover {opacity: .9;}
 
 button:active {opacity: .8;}
-

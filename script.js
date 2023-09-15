@@ -1,37 +1,75 @@
-//create the 4 calculation types: + - * /
-//an operation will consist of 3 variables:
-    //a number
-    //an operator
-    //a second number
+//number is input
 
-//function operate() will take an operator and 2 numbers and then calls one of the above functions on the numbers
+//user selects an operator
+    //stores displayVal in formerNum
+    //operator stays greyed out until = is pressed
+
+
+//user inputs second number
+    //display is cleared once a number is clicked
+//user presses =
+    //operate is ran with formerNum and displayVal
+    //displayVal is calculated against formerNum
+//display shows the answer based on operator selected
 
 let formerNum;
 let operator;
-let latterNum;
 
 let displayVal;
 
 const numBtn = document.querySelectorAll('.num');
 const display = document.querySelector('.display');
 const allClear = document.querySelector('#ac');
-// display.textContent = '123';
+const opBtn = document.querySelectorAll('.operator');
+const equalBtn = document.querySelector('#equals');
+
+
+display.textContent = '0';
 
 allClear.addEventListener('click', () => {
-    display.textContent = '';
+    display.textContent = '0';
 });
 
-
+//populate the display and log the number there
 numBtn.forEach(button => {
     button.addEventListener('click', () => {
-        console.log('ok');
-        display.textContent = display.textContent + button.id;
-        displayVal = display.textContent;
+        if (display.textContent == 0) {
+            display.textContent = '';
+            display.textContent = display.textContent + button.id;
+            displayVal = display.textContent;
+        } else {
+            display.textContent = display.textContent + button.id;
+            displayVal = display.textContent;
+        }
     });
 });
 
-function operate(callback, a, b) {
+//start of the function for the operator keys
+opBtn.forEach(button => {
+    button.addEventListener('click', () => {
+        operator = button.id;
+        button.style.opacity = '.8';
+        formerNum = displayVal;
+    });
+});
+
+equalBtn.addEventListener('click', () => {
     
+    console.log(operate(formerNum, displayVal));
+});
+
+function operate(a, b) {
+    if (operator == 'power') {
+
+    } else if (operator == 'divide') {
+
+    } else if (operator == 'multiply') {
+
+    } else if (operator == 'subtract') {
+
+    } else if (operator == 'add') {
+        
+    }
 }
 
 function add(a, b) {
