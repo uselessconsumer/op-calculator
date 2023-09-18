@@ -36,19 +36,23 @@ allClear.addEventListener('click', () => {
 //populate the display and log the number there
 numBtn.forEach(button => {
     button.addEventListener('click', () => {
-        if (opToggle == true) {
-            display.textContent = '0';
-            opToggle = false;
-            checkOpToggle(opToggle);
-        }
-
-        if (display.textContent == 0) {
-            display.textContent = '';
-            display.textContent = display.textContent + button.value;
-            displayVal = display.textContent;
+        if (display.textContent.length === 9){ //stops inputting numbers once display is full
+            console.log(displayVal.length);
         } else {
-            display.textContent = display.textContent + button.value;
-            displayVal = display.textContent;
+            if (opToggle == true) {
+                display.textContent = '0';
+                opToggle = false;
+                checkOpToggle(opToggle);
+            }
+    
+            if (display.textContent == 0) {
+                display.textContent = '';
+                display.textContent = display.textContent + button.value;
+                displayVal = display.textContent;
+            } else {
+                display.textContent = display.textContent + button.value;
+                displayVal = display.textContent;
+            }
         }
     });
 });
@@ -58,6 +62,8 @@ opBtn.forEach(button => {
     button.addEventListener('click', () => {
 
         if (opChain === true) {
+            opToggle = false;
+            checkOpToggle();
             operate(formerNum, displayVal);
             displayVal = display.textContent;
         }

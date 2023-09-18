@@ -49,6 +49,7 @@ body {
     box-sizing: border-box;
     font-family: 'Chivo Mono', monospace;
     color: #f7ebec;
+    text-shadow: 2px 2px #59656f;
     background-color: #331a2d;
     padding-top: 10px;
     padding-right: 9px;
