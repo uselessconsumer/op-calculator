@@ -1,9 +1,12 @@
+
+
 let formerNum;
 let operator;
 
 let displayVal;
 
 let opToggle = false;
+let opChain = false;
 
 const numBtn = document.querySelectorAll('.num');
 const display = document.querySelector('.display');
@@ -21,8 +24,12 @@ function checkOpToggle() {
 
 //clears display and resets the selected operator
 allClear.addEventListener('click', () => {
-    display.textContent = '0';
+    formerNum = undefined;
+    operator = undefined;
+    opChain = false;
     opToggle = false;
+
+    display.textContent = '0';
     checkOpToggle();
 });
 
@@ -50,10 +57,18 @@ numBtn.forEach(button => {
 //start of the function for the operator keys
 opBtn.forEach(button => {
     button.addEventListener('click', () => {
-        operator = button.id;
+
+        if (opChain === true) {
+            operate(formerNum, displayVal);
+            displayVal = display.textContent;
+        }
+
         button.style.opacity = '.8';
+
+        operator = button.id;
         formerNum = displayVal;
         opToggle = true;
+        opChain = true;
     });
 });
 
@@ -61,7 +76,10 @@ opBtn.forEach(button => {
 equalBtn.addEventListener('click', () => {
     opToggle = false;
     checkOpToggle();
-    console.log(operate(formerNum, displayVal));
+    operate(formerNum, displayVal);
+    opToggle = true;
+    formerNum = undefined;
+    operator = undefined;
 });
 
 function power(a, b) { return Math.pow(a, b) }
