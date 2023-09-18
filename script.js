@@ -14,6 +14,7 @@ const display = document.querySelector('.display');
 const allClear = document.querySelector('#ac');
 const opBtn = document.querySelectorAll('.operator');
 const equalBtn = document.querySelector('#equals');
+const backspace = document.querySelector('#backspace');
 
 display.textContent = '0';
 
@@ -33,6 +34,11 @@ allClear.addEventListener('click', () => {
     display.textContent = '0';
     checkOpToggle();
 });
+
+backspace.addEventListener('click', () => {
+    display.textContent = display.textContent.slice(0, display.textContent.length - 1);
+})
+
 
 //populate the display and log the number there
 numBtn.forEach(button => {
