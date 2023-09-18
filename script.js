@@ -2,6 +2,7 @@
 
 let formerNum;
 let operator;
+let result;
 
 let displayVal;
 
@@ -36,8 +37,8 @@ allClear.addEventListener('click', () => {
 //populate the display and log the number there
 numBtn.forEach(button => {
     button.addEventListener('click', () => {
-        if (display.textContent.length === 9){ //stops inputting numbers once display is full
-            console.log(displayVal.length);
+        if (display.textContent.length === 9 && opToggle == false){
+             //stops inputting numbers once display is full
         } else {
             if (opToggle == true) {
                 display.textContent = '0';
@@ -57,7 +58,7 @@ numBtn.forEach(button => {
     });
 });
 
-//start of the function for the operator keys
+//function for the operator keys
 opBtn.forEach(button => {
     button.addEventListener('click', () => {
 
@@ -92,16 +93,24 @@ function subtract(a, b) { return a - b; }
 function multiply(a, b) { return a * b; }
 function divide(a, b) { return a / b; }
 
+
 function operate(a, b) {
+
+
     if (operator == 'power') {
-        return display.textContent = power(a, b);
+        result = power(a, b).toString();
     } else if (operator == 'divide') {
-        return display.textContent = divide(a, b);
+        result = divide(a, b).toString();
     } else if (operator == 'multiply') {
-        return display.textContent = multiply(a, b);
+        result = multiply(a, b).toString();
     } else if (operator == 'subtract') {
-        return display.textContent = subtract(a, b);
+        result = subtract(a, b).toString();
     } else if (operator == 'add') {
-        return display.textContent = add(a, b);
+        result = add(a, b).toString();
     }
+
+    if (result.length >= 10) {
+        return display.textContent = result.slice(0, 9);
+    } else { return display.textContent = result }
 }
+
