@@ -46,10 +46,13 @@ body {
 }
 
 .display {
+    box-sizing: border-box;
+    font-family: 'Chivo Mono', monospace;
     color: #f7ebec;
     background-color: #331a2d;
-    padding-right: 5px;
-    font-size: 70px;
+    padding-top: 10px;
+    padding-right: 9px;
+    font-size: 65px;
     border-radius: 10px;
     height: 100px;
     margin: 3px 13px;

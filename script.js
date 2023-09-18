@@ -50,7 +50,6 @@ numBtn.forEach(button => {
             display.textContent = display.textContent + button.value;
             displayVal = display.textContent;
         }
-        
     });
 });
 
@@ -62,7 +61,6 @@ opBtn.forEach(button => {
             operate(formerNum, displayVal);
             displayVal = display.textContent;
         }
-
         button.style.opacity = '.8';
 
         operator = button.id;
