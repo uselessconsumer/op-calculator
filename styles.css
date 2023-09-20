@@ -13,7 +13,7 @@ body {
     background-image: url("images/tumblr_inline_mlkwolhobQ1r53miq.png");
 }
 
-.num {
+.num, .decimal {
     color: #1d1e2c;
     background-color: #f7ebec;
 }
@@ -21,7 +21,7 @@ body {
 .rightcol {
     background-color: #ac9fbb;
     color: #f7ebec;
-    font-size: 26px;
+    font-size: 26.5px;
 }
 
 .toprow {
@@ -70,6 +70,10 @@ body {
 
 #zero {
     width: 185px;
+}
+
+#backspace {
+    padding-right: 8.5px;
 }
 
 button {

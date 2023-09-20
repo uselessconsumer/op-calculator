@@ -15,6 +15,7 @@ const allClear = document.querySelector('#ac');
 const opBtn = document.querySelectorAll('.operator');
 const equalBtn = document.querySelector('#equals');
 const backspace = document.querySelector('#backspace');
+const decimalBtn = document.querySelector('.decimal');
 
 display.textContent = '0';
 
@@ -39,7 +40,6 @@ backspace.addEventListener('click', () => {
     display.textContent = display.textContent.slice(0, display.textContent.length - 1);
 })
 
-
 //populate the display and log the number there
 numBtn.forEach(button => {
     button.addEventListener('click', () => {
@@ -63,6 +63,15 @@ numBtn.forEach(button => {
         }
     });
 });
+
+decimalBtn.addEventListener('click', () => {
+    if(display.textContent.includes('.')) {
+        //do nothing
+    } else {
+        display.textContent = display.textContent + decimalBtn.value;
+    }
+});
+
 
 //function for the operator keys
 opBtn.forEach(button => {
